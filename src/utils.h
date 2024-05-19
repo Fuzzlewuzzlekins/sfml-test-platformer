@@ -1,0 +1,1 @@
+enum Animation {walk, idle, sit, stand, sitIdle};
