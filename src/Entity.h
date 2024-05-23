@@ -9,7 +9,8 @@ class Entity {
         Entity(sf::Texture &texture, int width, int height, float scale);
         // Entity(const Entity &E); - don't think I need this
         // Entity & operator=(const Entity &E); - or this?
-        void draw();
+        void updateFrame();
+
 
     private:
         // sf::Texture entTexture;
@@ -19,4 +20,4 @@ class Entity {
         unsigned int entSpeed;
         int entDirection;
         Animation entAnimState;
-}
+};
