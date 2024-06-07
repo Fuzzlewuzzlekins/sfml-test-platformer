@@ -73,12 +73,67 @@ void Entity::updateFrame() {
             entRect.left = 0;
             entRect.top = 32;
     }
-    // Finally, update the sprite with the new frame bounds.
+    // Update sprite's anim frame bounds.
     entSprite.setTextureRect(entRect);
-    // Also update sprite left/right facing at this time.
+}
+
+// Update sprite's left/right facing.
+void Entity::updateFacing() {
     entSprite.setScale(sf::Vector2f(entDirection * entScale, entScale));
 }
 
+void Entity::drawToWindow(sf::RenderWindow &window) {
+    // // Update sprite's left/right facing and anim frame bounds.
+    // entSprite.setScale(sf::Vector2f(entDirection * entScale, entScale));
+    // entSprite.setTextureRect(entRect);
+    // Draw it!
+    window.draw(entSprite);
+}
+
+void Entity::setPosition(float x, float y) {
+    entSprite.setPosition(x, y);
+}
+
+void Entity::move(const sf::Vector2f &offset) {
+    entSprite.move(offset);
+}
+
+void Entity::move(float offsetX, float offsetY) {
+    entSprite.move(offsetX, offsetY);
+}
+
+// void Entity::moveInTime(float seconds) {
+//     entSprite.move(entDirection * entSpeed * seconds, 0.f);
+// }
+
+void Entity::setAnimationState(Animation state){
+    entAnimState = state;
+}
+
+void Entity::setDirection(int direction) {
+    entDirection = direction;
+}
+
+void Entity::setSpeed(float speed) {
+    entSpeed = speed;
+}
+
+Animation Entity::getAnimationState() {
+    return entAnimState;
+}
+
+int Entity::getDirection() {
+    return entDirection;
+}
+
+float Entity::getSpeed() {
+    return entSpeed;
+}
+
+const sf::Sprite & Entity::getSprite() {
+    return entSprite;
+}
+
 Entity::~Entity() {
-    // not sure if needed yet, but probably
+    // not sure if needed yet, but probably?
 }
