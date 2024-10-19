@@ -83,10 +83,6 @@ void Entity::updateFacing() {
 }
 
 void Entity::drawToWindow(sf::RenderWindow &window) {
-    // // Update sprite's left/right facing and anim frame bounds.
-    // entSprite.setScale(sf::Vector2f(entDirection * entScale, entScale));
-    // entSprite.setTextureRect(entRect);
-    // Draw it!
     window.draw(entSprite);
 }
 
@@ -135,5 +131,5 @@ const sf::Sprite & Entity::getSprite() {
 }
 
 Entity::~Entity() {
-    // not sure if needed yet, but probably?
+    // not sure if needed yet?
 }
